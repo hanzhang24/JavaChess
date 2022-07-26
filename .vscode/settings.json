@@ -1,0 +1,10 @@
+{
+    "java.project.sourcePaths": [
+        "Src/com.chess.engine/board",
+        "src"
+    ],
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "c:\\Users\\hanzh\\Downloads\\guava-31.1-jre.jar"
+    ]
+}
