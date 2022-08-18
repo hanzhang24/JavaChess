@@ -16,18 +16,18 @@ public abstract class Tile{
         
         final Map<Integer, EmptyTile> emptyTileMap = new HashMap<>();
 
-        for(int i =0; i<64; i++){                   //64 empty tiles in chess board filled up
+        for(int i =0; i<BoardUtils.NUM_TILES; i++){                   //64 empty tiles in chess board filled up
             emptyTileMap.put(i, new EmptyTile(i));
         }
 
         return ImmutableBiMap.copyOf(emptyTileMap);
     }
 
-    public static Tile createTile(int tileCoordinates, final Piece piece){                                      //only way to make tile is to use creatTile method, as it's the only public constructor avaliable to oustide classes
-        return piece != null ? new OccupiedTile(tileCoordinates, piece) : EMPTY_TILES.get(tileCoordinates);     //if tileCoordinate is 100, make 100 to boot. 
+    public static Tile createTile(final int tileCoordinates, final Piece piece){                                      //only way to make tile is to use creatTile method, as it's the only public constructor avaliable to oustide classes
+        return piece != null ? new OccupiedTile(tileCoordinates, piece) : EMPTY_TILES.get(tileCoordinates);           //if tileCoordinate is 100, make 100 to boot. 
     }
 
-    private Tile(int tileCoordinates){                  //initalize tiles
+    private Tile(final int tileCoordinates){                  //initalize tiles
         this.tileCoordinates = tileCoordinates;
     }
 
